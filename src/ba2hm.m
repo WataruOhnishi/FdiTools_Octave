@@ -8,16 +8,8 @@ function [Hm] = ba2hm(Bn,An,nrofi,nrofo)
 %%%%%
 nrofh = nrofi*nrofo;             % number of transfer functions
 
-N=cell(nrofo,nrofi);
-D=cell(nrofo,nrofi);
-
-for i = 1:nrofo
-    for ii = 1:nrofi
-        N{i,ii} = 0;
-        D{i,ii} = 1;
-    end
-end
-Hm = tf(N,D);
+N = cell(nrofo,nrofi);
+D = cell(nrofo,nrofi);
 
 for h=1:nrofh
     i = ceil(h/nrofo); o = h-(i-1)*nrofo;
