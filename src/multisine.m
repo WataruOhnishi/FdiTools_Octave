@@ -48,7 +48,7 @@ R = zeros(nrofi,nrofi,nh);
 for i=1:nrofi
     w = 1i*2*pi*harm.df*(0:1:nrofs/2-1)';
     X = zeros(nh,1); w = w(1:nh);
-    [Bn,An] = tfdata(Hampl(i),'v');
+    [Bn,An] = tfdata(tf(Hampl(i)),'v');
     Mag = abs(polyval(Bn,w)./polyval(An,w));
     X(ex) = Mag(ex);
     for j=1:nrofi

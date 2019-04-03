@@ -41,8 +41,7 @@ for ii = 1:nrofi
         sub = sub+1;
         subplot(nrofi, nrofi, sub);
         semilogx(ms.freq,dbm(squeeze(ms.X(ii,jj,:))),'+')
-        old = axis; axis([0, length(ms.x), old(3:4)])
-    end
+            end
 end
 pause
 

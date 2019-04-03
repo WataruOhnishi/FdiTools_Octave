@@ -82,7 +82,7 @@ for i=1:nrofi
     for o=1:nrofo
         for f=1:nroff
             Cf = cov(INP(f,:,i),OUT(f,:,o));        % measurement covariance
-            cXY(f,(i-1)*nrofo+o) = Cf(1,2)/2/nrofp;
+            cXY(f,(i-1)*nrofo+o) = Cf/2/nrofp;      % in MATLAB, Cf(1,2)
         end
         FRFs(:,(i-1)*nrofo+o) = Ys(:,o)./Xs(:,i);
         sCR(:,(i-1)*nrofo+o) = ...

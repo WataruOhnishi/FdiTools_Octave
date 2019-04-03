@@ -6,8 +6,9 @@
 % System:   Conventional motor-bench with flexible coupling.
 % Author:   Thomas Beauduin, KULeuven, PMA division, 2014
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 clear all; close all; clc;
-load('private/MultisineTypeA.mat');     % schoeder multisine experiment
+load('MultisineTypeA.mat');     % schoeder multisine experiment
 
 % Time treatment: remove transients/offsets/trends
 trans = 1;                      % number of transient periods
@@ -92,3 +93,4 @@ hold on, semilogx(freq,phs(FRF.gtls(:,2)),'k--')  % starting values
     ylabel('Phase [deg]')
     xlabel('frequency [Hz]')
     xlim([10,300])    
+    
